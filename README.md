@@ -25,21 +25,7 @@ git clone https://github.com/nicmoraesnasc/Socket-Programming.git
 cd Socket-Programming 
 ```
 
-### 2. Compilar os arquivos (modo local)
-
-g++ server.cpp -o server
-
-g++ client.cpp -o client
-
-### 3. Executar (bash)
-
-### Servidor:
-./server
-
-### Cliente:
-./client "Sua mensagem aqui"
-
-### 4. (Opcional) Executar com docker
+### 2. Executar com docker
 
 ### Build da imagem:
 docker build -t socket-comm
@@ -50,4 +36,15 @@ docker run -d --name app -v ${PWD}/volume:/app socket-comm
 ### Acessar o terminal dentro do container:
 docker exec -it app bash
 
-### Siga o passo 2 para compilar os arquivos
+### 3. Compilar (bash)
+
+### Servidor:
+g++ server.cpp -o server
+
+./server
+
+### Cliente:
+g++ client.cpp -o client
+
+./client "mensagem para o servidor"
+
