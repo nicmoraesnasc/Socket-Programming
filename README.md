@@ -28,7 +28,7 @@ cd Socket-Programming
 ### 2. Executar com docker
 
 ### Build da imagem:
-docker build -t socket-comm
+docker build . -t socket-comm  
 
 ### Criar e rodar o container com volume montado:
 docker run -d --name app -v ${PWD}/volume:/app socket-comm
@@ -36,15 +36,21 @@ docker run -d --name app -v ${PWD}/volume:/app socket-comm
 ### Acessar o terminal dentro do container:
 docker exec -it app bash
 
-### 3. Compilar (bash)
+### 3. Compilar (bash):
 
 ### Servidor:
 g++ server.cpp -o server
 
-./server
-
 ### Cliente:
 g++ client.cpp -o client
 
+### 4. Rodar a aplicação:
+
+### Dentro do container, abra dois terminais bash separados
+### No primeiro terminal, execute o servidor:
+./server
+
+### No segundo terminal, execute o cliente, enviando uma mensagem como argumento:
 ./client "mensagem para o servidor"
+
 
