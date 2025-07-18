@@ -22,7 +22,7 @@ Funcionalidades
 ### 1. Clonar o repositório
 ```bash
 git clone https://github.com/nicmoraesnasc/Socket-Programming.git
-cd Socket Programming 
+cd Socket-Programming 
 ```
 
 ### 2. Compilar os arquivos (modo local)
