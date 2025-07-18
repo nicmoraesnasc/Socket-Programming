@@ -54,7 +54,7 @@ int main() {
         memset(buffer, 0, sizeof(buffer));
 
         //Read data
-         ssize_t valread = read(new_socket, buffer, sizeof(buffer) - 1);
+        ssize_t valread = read(new_socket, buffer, sizeof(buffer) - 1);
         if (valread > 0) {
             buffer[valread] = '\0';  // Null-terminate
             std::cout << "Message from client: " << buffer << std::endl;
