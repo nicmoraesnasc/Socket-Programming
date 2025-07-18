@@ -28,6 +28,7 @@ cd Socket Programming
 ### 2. Compilar os arquivos (modo local)
 
 g++ server.cpp -o server
+
 g++ client.cpp -o client
 
 ### 3. Executar (bash)
