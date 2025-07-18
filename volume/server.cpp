@@ -50,9 +50,17 @@ int main() {
             exit(EXIT_FAILURE);
         }
 
+        //Clear buffer before reading
+        memset(buffer, 0, sizeof(buffer));
+
         //Read data
-        read(new_socket, buffer, 1024);
-        std::cout << "Message from client: " << buffer << std::endl;
+         ssize_t valread = read(new_socket, buffer, sizeof(buffer) - 1);
+        if (valread > 0) {
+            buffer[valread] = '\0';  // Null-terminate
+            std::cout << "Message from client: " << buffer << std::endl;
+        } else {
+            std::cerr << "Read error or connection closed" << std::endl;
+        }
 
         //Close socket
         close(new_socket);
